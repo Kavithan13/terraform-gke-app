@@ -8,8 +8,8 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/<YOUR-REPO>.git
-    targetRevision: HEAD
+    repoURL: https://github.com/Kavithan13/terraform-gke-app.git
+    targetRevision: main
     path: k8s/dev
 
   destination:
