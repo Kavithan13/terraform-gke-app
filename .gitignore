@@ -1,29 +1,27 @@
-form
+# =========================
+# Terraform files ❌
 # =========================
 .terraform/
 *.tfstate
 *.tfstate.*
-crash.log
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-
-# Sensitive variables
 *.tfvars
 *.tfvars.json
+
+# Terraform configs (optional to ignore)
+*.tf
+*.tf.json
+
+# Lock file (optional)
+.terraform.lock.hcl
+
+# =========================
+# Secrets / env
+# =========================
 .env
 
 # =========================
-# Kubernetes (optional temp files)
+# IDE / OS
 # =========================
-*.log
-*.tmp
-
-# =========================
-# OS / IDE files
-# =========================
-.DS_Store
-Thumbs.db
 .vscode/
 .idea/
+.DS_Store
