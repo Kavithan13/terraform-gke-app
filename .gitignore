@@ -1,0 +1,29 @@
+form
+# =========================
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive variables
+*.tfvars
+*.tfvars.json
+.env
+
+# =========================
+# Kubernetes (optional temp files)
+# =========================
+*.log
+*.tmp
+
+# =========================
+# OS / IDE files
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

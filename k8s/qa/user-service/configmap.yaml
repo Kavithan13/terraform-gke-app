@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user-config
+  namespace: qa
+
+data:
+  APP_ENV: "qa"
+  LOG_LEVEL: "info"
