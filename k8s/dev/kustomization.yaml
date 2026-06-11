@@ -3,7 +3,6 @@ resources:
   - ingress.yaml
   - egress.yaml
 
-  # ✅ include all services
   - frontend
   - backend
   - user-service
