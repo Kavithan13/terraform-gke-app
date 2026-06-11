@@ -3,18 +3,38 @@ kind: Deployment
 metadata:
   name: backend
   namespace: dev
+
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: backend
+
   template:
     metadata:
       labels:
         app: backend
+
     spec:
       containers:
       - name: backend
-        image: gcr.io/<PROJECT_ID>/backend:v1
+        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v1
+
         ports:
         - containerPort: 3000
+
+        env:
+        - name: NODE_ENV
+          value: "production"
+
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
+
+        securityContext:
+          runAsNonRoot: true
