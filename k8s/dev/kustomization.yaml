@@ -1,0 +1,9 @@
+resources:
+  - namespace.yaml
+  - ingress.yaml
+  - egress.yaml
+
+  # ✅ include all services
+  - frontend
+  - backend
+  - user-service
