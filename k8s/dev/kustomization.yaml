@@ -4,12 +4,9 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - ingress.yaml
-  - egress.yaml
 
   - frontend/deployment.yaml
   - frontend/service.yaml
 
   - backend/deployment.yaml
   - backend/service.yaml
-
-  #- user-service

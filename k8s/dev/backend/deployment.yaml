@@ -1,29 +1,25 @@
-containers:
-# ✅ Backend app
-- name: backend
-  image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v2
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: dev
 
-  ports:
-  - containerPort: 3000
+spec:
+  replicas: 1
 
-  env:
-  - name: DB_HOST
-    value: "127.0.0.1"
+  selector:
+    matchLabels:
+      app: backend
 
-  - name: DB_PORT
-    value: "3306"
+  template:
+    metadata:
+      labels:
+        app: backend
 
-  - name: DB_USER
-    value: "dbuser"
+    spec:
+      containers:
+      - name: backend
+        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v2
 
-  - name: DB_NAME
-    value: "app-db"
-
-# ✅ Cloud SQL Proxy sidecar
-- name: cloudsql-proxy
-  image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.7.0
-
-  args:
-  - "--structured-logs"
-  - "--port=3306"
-  - "avian-outrider-497411-v9:asia-south1:app-db-instance"
+        ports:
+        - containerPort: 3000
