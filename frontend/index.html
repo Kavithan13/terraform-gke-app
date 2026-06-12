@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Frontend</title>
-</head>
 <body>
 
-<h1>Frontend App ✅</h1>
+<h2>Frontend App ✅</h2>
 
 <button onclick="callAPI()">Call Backend</button>
 
@@ -18,6 +15,11 @@ function callAPI() {
     .then(data => {
       document.getElementById("output").innerText =
         JSON.stringify(data, null, 2);
+    })
+    .catch(err => {
+      document.getElementById("output").innerText =
+        "Error calling backend";
+      console.error(err);
     });
 }
 </script>
