@@ -1,19 +1,14 @@
 const express = require("express");
 const app = express();
 
-// ✅ Root path (for health + debug)
+// ✅ Root endpoint (health check)
 app.get("/", (req, res) => {
-  res.send("Backend is running ✅");
+  res.send("Backend running ✅");
 });
 
-// ✅ API route
+// ✅ API endpoint (THIS IS WHAT YOU NEED)
 app.get("/api", (req, res) => {
   res.json({ message: "Hello from Backend 🚀" });
-});
-
-// ✅ Catch ALL routes (critical fix)
-app.get("*", (req, res) => {
-  res.json({ message: "Handled by backend ✅", path: req.originalUrl });
 });
 
 app.listen(3000, () => {
