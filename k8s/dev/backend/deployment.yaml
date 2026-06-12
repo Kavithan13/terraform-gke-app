@@ -1,7 +1,7 @@
 containers:
 # ✅ Backend app
 - name: backend
-  image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v1
+  image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v2
 
   ports:
   - containerPort: 3000
