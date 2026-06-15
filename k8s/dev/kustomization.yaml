@@ -11,4 +11,3 @@ resources:
   - backend/rollout.yaml
   - backend/backend-active-service.yaml
   - backend/backend-preview-service.yaml
-

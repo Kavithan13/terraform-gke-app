@@ -15,7 +15,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: backend-active-service
+            name: backend-active-service   # ✅ important
             port:
               number: 80
 
