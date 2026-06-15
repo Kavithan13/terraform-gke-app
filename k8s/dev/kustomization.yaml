@@ -8,5 +8,7 @@ resources:
   - frontend/deployment.yaml
   - frontend/service.yaml
 
-  - backend/deployment.yaml
-  - backend/service.yaml
+  - backend/rollout.yaml
+  - backend/backend-active-service.yaml
+  - backend/backend-preview-service.yaml
+
