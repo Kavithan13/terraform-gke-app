@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: backend
+  namespace: dev
+
+spec:
+  replicas: 1
+
+  strategy:
+    blueGreen:
+      activeService: backend-active-service
+      previewService: backend-preview-service
+      autoPromotionEnabled: false   # 👈 important for demo
+
+  selector:
+    matchLabels:
+      app: backend
+
+  template:
+    metadata:
+      labels:
+        app: backend
+
+    spec:
+      containers:
+      - name: backend
+        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v5
+        ports:
+        - containerPort: 3000

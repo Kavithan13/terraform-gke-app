@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-active-service
+  namespace: dev
+
+spec:
+  selector:
+    app: backend
+
+  ports:
+  - port: 80
+    targetPort: 3000
