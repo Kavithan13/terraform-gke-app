@@ -6,9 +6,11 @@ app.get("/", (req, res) => {
   res.send("Backend running ✅");
 });
 
-// ✅ API endpoint (THIS IS WHAT YOU NEED)
 app.get("/api", (req, res) => {
-  res.json({ message: "Hello from Backend 🚀" });
+  res.json({
+    message: "Hello from Backend 🚀",
+    version: "v5"
+  });
 });
 
 app.listen(3000, () => {
