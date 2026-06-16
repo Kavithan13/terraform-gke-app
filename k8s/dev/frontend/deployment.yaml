@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/frontend:v2
+        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/frontend:v3
 
         ports:
         - containerPort: 80
