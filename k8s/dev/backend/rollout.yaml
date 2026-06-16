@@ -5,13 +5,13 @@ metadata:
   namespace: dev
 
 spec:
-  replicas: 0
+  replicas: 1
 
   strategy:
     blueGreen:
       activeService: backend-active-service
       previewService: backend-preview-service
-      autoPromotionEnabled: false   # ✅ important for demo
+      autoPromotionEnabled: false
 
   selector:
     matchLabels:
