@@ -1,3 +1,5 @@
+require('./tracing');  // ✅ must be first line
+
 const express = require("express");
 const app = express();
 
@@ -29,7 +31,7 @@ app.get("/api", (req, res) => {
   });
 });
 
-// ✅ ✅ Error endpoint (USED FOR DEMO)
+// ✅ ERROR endpoint (for demo)
 app.get("/error", (req, res) => {
   console.error(JSON.stringify({
     severity: "ERROR",
@@ -63,7 +65,8 @@ app.get("*", (req, res) => {
 app.listen(3000, () => {
   console.log(JSON.stringify({
     severity: "INFO",
-    message: `Server running on port 3000`,
+    message: "Server started",
+    port: 3000,
     version: APP_VERSION
   }));
 });
