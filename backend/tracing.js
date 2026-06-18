@@ -5,14 +5,14 @@ const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumenta
 const { TraceExporter } = require('@google-cloud/opentelemetry-cloud-trace-exporter');
 
 const sdk = new NodeSDK({
-  traceExporter: new TraceExporter(), // ✅ GCP exporter
+  traceExporter: new TraceExporter(),
   instrumentations: [getNodeAutoInstrumentations()],
 });
 
-sdk.start()
-  .then(() => {
-    console.log("Tracing initialized ✅");
-  })
-  .catch((err) => {
-    console.error("Tracing error ❌", err);
-  });
+// ✅ FIX: No .then()
+try {
+  sdk.start();
+  console.log("Tracing initialized ✅");
+} catch (err) {
+  console.error("Tracing failed ❌", err);
+}
