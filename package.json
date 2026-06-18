@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.1",
+    "@opentelemetry/auto-instrumentations-node": "^0.77.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.219.0",
+    "@opentelemetry/sdk-node": "^0.219.0"
+  },
+  "allowScripts": {
+    "protobufjs@7.6.4": true
+  }
+}
