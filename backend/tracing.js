@@ -1,18 +1,22 @@
 'use strict';
 
-const { NodeSDK } = require('@opentelemetry/sdk-node');
-const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
-const { TraceExporter } = require('@google-cloud/opentelemetry-cloud-trace-exporter');
+console.log("🔥 tracing.js loaded");
 
-const sdk = new NodeSDK({
-  traceExporter: new TraceExporter(),
-  instrumentations: [getNodeAutoInstrumentations()],
-});
+let sdk;
 
-// ✅ FIX: No .then()
 try {
+  const { NodeSDK } = require('@opentelemetry/sdk-node');
+  const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
+  const { TraceExporter } = require('@google-cloud/opentelemetry-cloud-trace-exporter');
+
+  sdk = new NodeSDK({
+    traceExporter: new TraceExporter(),
+    instrumentations: [getNodeAutoInstrumentations()],
+  });
+
   sdk.start();
-  console.log("Tracing initialized ✅");
+  console.log("✅ Tracing initialized successfully");
+
 } catch (err) {
-  console.error("Tracing failed ❌", err);
+  console.error("❌ Tracing failed to initialize:", err);
 }
