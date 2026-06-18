@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v6
+        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v7
 
         ports:
         - containerPort: 3000
