@@ -25,10 +25,10 @@ spec:
     spec:
       containers:
       - name: backend
-        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v7
+        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v8
         ports:
           - containerPort: 3000
 
         env:
           - name: APP_VERSION
-            value: "v7"
+            value: "v8"
