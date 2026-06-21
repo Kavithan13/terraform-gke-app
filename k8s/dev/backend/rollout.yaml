@@ -26,14 +26,14 @@ spec:
 
       containers:
       - name: backend
-        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v15
+        image: asia-south1-docker.pkg.dev/avian-outrider-497411-v9/docker-repo/backend:v16
 
         ports:
         - containerPort: 3000
 
         env:
         - name: APP_VERSION
-          value: "v15"
+          value: "v16"
 
         # ✅ SECURITY (important)
         securityContext:
