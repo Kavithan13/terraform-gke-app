@@ -14,7 +14,7 @@ spec:
     blueGreen:
       activeService: backend-active-service
       previewService: backend-preview-service
-      autoPromotionEnabled: false   # manual promote for demo
+      autoPromotionEnabled: false   # manual promotion for demo
 
   template:
     metadata:
@@ -22,7 +22,7 @@ spec:
         app: backend
 
     spec:
-      serviceAccountName: backend-sa   # ✅ RBAC integration
+      serviceAccountName: backend-sa   # ✅ RBAC
 
       containers:
       - name: backend
@@ -35,23 +35,25 @@ spec:
         - name: APP_VERSION
           value: "v16"
 
-        # ✅ SECURITY (important)
         securityContext:
           runAsNonRoot: true
+          runAsUser: 1000         
+          runAsGroup: 1000
           readOnlyRootFilesystem: true
           allowPrivilegeEscalation: false
 
-        # ✅ OPTIONAL (good practice - health checks)
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 3000
-          initialDelaySeconds: 5
-          periodSeconds: 10
-
+        # ✅ Liveness probe
         livenessProbe:
           httpGet:
             path: /
             port: 3000
           initialDelaySeconds: 10
           periodSeconds: 20
+
+        # ✅ Readiness probe
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 10
