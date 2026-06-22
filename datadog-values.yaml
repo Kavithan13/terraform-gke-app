@@ -1,0 +1,33 @@
+datadog:
+  apiKey: "ed805cc2dd94360f923f18c0221a97ab"
+  site: "us5.datadoghq.com"
+
+  logs:
+    enabled: true
+
+  apm:
+    enabled: true
+
+  processAgent:
+    enabled: true
+
+  systemProbe:
+    enabled: false       # ✅ CRITICAL FIX
+
+  networkMonitoring:
+    enabled: false       # ✅ prevents system-probe
+
+  securityAgent:
+    runtime:
+      enabled: false     # ✅ prevents conflicts
+
+agents:
+  containers:
+    systemProbe:
+      enabled: false     # ✅ HARD OVERRIDE
+
+networkMonitoring:
+  enabled: false         # ✅ extra override
+
+systemProbe:
+  enabled: false         # ✅ double safety
