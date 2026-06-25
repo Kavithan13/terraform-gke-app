@@ -5,11 +5,15 @@ metadata:
   namespace: dev
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+
 spec:
+  ingressClassName: nginx   # ✅ CRITICAL
+
   tls:
   - hosts:
     - backend.example.com
     secretName: tls-secret
+
   rules:
   - host: backend.example.com
     http:
@@ -21,3 +25,4 @@ spec:
             name: backend-active-service
             port:
               number: 80
+
