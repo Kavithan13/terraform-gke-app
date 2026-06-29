@@ -49,7 +49,7 @@ This setup ensures **automated, scalable, and reliable deployments** using Git a
 - Namespace: `dev`
 - Deployments:
   - Frontend Application
-  - Backend Application (if applicable)
+  - Backend Application
 - Services:
   - ClusterIP / LoadBalancer
 - Ingress:
