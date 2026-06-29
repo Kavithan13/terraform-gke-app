@@ -16,10 +16,6 @@ This setup ensures **automated, scalable, and reliable deployments** using Git a
 
 ---
 
-## 🧱 Architecture Diagram
-
----
-
 ## ⚙️ Technology Stack
 
 | Layer | Tools |
